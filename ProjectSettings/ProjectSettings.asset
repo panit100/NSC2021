@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: MDT_NSC_2021
   productName: NSC2021
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -655,8 +655,8 @@ PlayerSettings:
   vrEditorSettings: {}
   cloudServicesEnabled:
     Analytics: 1
-    Build: 1
-    Collab: 1
+    Build: 0
+    Collab: 0
     Game Performance: 0
     Purchasing: 0
     UDP: 0
