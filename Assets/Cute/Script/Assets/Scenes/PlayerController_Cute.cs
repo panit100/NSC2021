@@ -77,9 +77,20 @@ public class PlayerController_Cute : MonoBehaviour
     }
 
     void LookAtMouse(){
+        Vector3 playerLook;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,transform.position.y,Camera.main.transform.position.y));
-        transform.LookAt(mousePos + Vector3.forward);
+        if(Physics.Raycast(ray, out hit)){
+            playerLook = ray.GetPoint(hit.distance);
+            playerLook.y = transform.position.y;
+            
+            Debug.DrawLine(ray.origin,playerLook,Color.red);
+            
+
+            transform.LookAt(playerLook);
+        }
+
+        
     }
 }
