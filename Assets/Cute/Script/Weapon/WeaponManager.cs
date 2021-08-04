@@ -23,13 +23,6 @@ public class WeaponManager : MonoBehaviour
         if(GetComponentInParent<PlayerController_Cute>() != null){
             parent = GetComponentInParent<PlayerController_Cute>();
         }
-        
-
-        // if(parent != null){
-        //     gettingColliider.enabled = false;
-        // }else{
-        //     gettingColliider.enabled = true;
-        // }
 
         rigidbody = GetComponent<Rigidbody>();
         
@@ -37,14 +30,8 @@ public class WeaponManager : MonoBehaviour
 
     }
 
-    // private void Update() {
-        
-        
-    //     transform.position = Vector3.zero;
-        
-        
-    // }
-
+    
+    
     void DorpWeapon(){
             rigidbody.isKinematic = false;
             attackCollider.enabled = false;

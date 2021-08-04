@@ -558,6 +558,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   currentWeapon: {fileID: 0}
+  dashSpeed: 10
+  dashTime: 0.25
+  delayDash: 1
+  currentTime: 0
 --- !u!95 &584688288
 Animator:
   serializedVersion: 3
