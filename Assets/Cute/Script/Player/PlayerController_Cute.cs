@@ -23,7 +23,7 @@ public class PlayerController_Cute : MonoBehaviour
     public float dashTime;
     public float delayDash;
     public float currentTime = 0;
-    bool isDash = false;
+    public bool isDash = false;
 
 
     // Start is called before the first frame update
@@ -47,6 +47,7 @@ public class PlayerController_Cute : MonoBehaviour
         //DashbyAnimation();
 
         if(Input.GetKeyDown(KeyCode.Space) && currentTime >= delayDash){
+            isDash = true;
             StartCoroutine(Dash());
         }
     }
@@ -114,6 +115,7 @@ public class PlayerController_Cute : MonoBehaviour
         while(Time.time < startTime + dashTime){
             characterController.Move(move * dashSpeed * Time.deltaTime);
             currentTime = 0;
+            isDash = false;
             yield return null;
         }
     }
