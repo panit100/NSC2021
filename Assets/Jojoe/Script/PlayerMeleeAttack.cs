@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+public class PlayerMeleeAttack : MonoBehaviour
 {
-    bool openCollider = false;
-    public float attackDuration = 3f;
     Collider attackCollider;
     int damage = 20;
-
+    public float reloadTime = 2f;
+    bool isReloading;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,26 +17,28 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Attack();
+        if(Input.GetMouseButtonDown(0))
+        {
+            Reload();
+        }
+        else if(Input.GetMouseButtonDown(1))
+        {
+            Reload();
+        }
         closeCollider();
     }
 
     void Attack(){
         if(Input.GetMouseButtonDown(0))
         {
-            openCollider = true;
             attackCollider.GetComponent<BoxCollider>().enabled = true;
             Debug.Log("Left");
-
-            
         }
         else if(Input.GetMouseButtonDown(1))
         {
-            openCollider = true;
             attackCollider.GetComponent<BoxCollider>().enabled = true;
             Debug.Log("Right");
         }
-        else{}
     }
 
     void closeCollider(){
@@ -49,17 +50,28 @@ public class PlayerAttack : MonoBehaviour
         {
             attackCollider.GetComponent<BoxCollider>().enabled = false;
         }
-        else{}
     }
 
-    private void OnTriggerEnter(Collider input)
+    void OnTriggerEnter(Collider input)
     {
-        //List
-        //for each do damage
-        //clear list
         if(input.tag == "Enemy" )
         {
             input.GetComponent<EnemyController>().attck(damage);
         }
+    }
+
+    void Reload(){
+        if(isReloading == false){
+            Attack();
+            isReloading = true;
+            StartCoroutine(ReloadAfterTime());
+        }
+    }
+
+    IEnumerator ReloadAfterTime(){
+        Debug.Log("Wait");
+        yield return new WaitForSeconds(reloadTime);
+        Debug.Log("Ready");
+        isReloading = false;
     }
 }
