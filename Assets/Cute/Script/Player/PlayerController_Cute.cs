@@ -10,7 +10,9 @@ public class PlayerController_Cute : MonoBehaviour
     private bool groundedPlayer;
     private float gravityValue = -9.81f;
 
+    public GameObject handObject;
     public WeaponManager currentWeapon;
+
 
     Animator animator;
 

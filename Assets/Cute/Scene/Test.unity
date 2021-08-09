@@ -275,7 +275,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372251395}
-  m_LocalRotation: {x: 0.4748953, y: 0.5284837, z: -0.52995896, w: -0.46295014}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -298,7 +298,7 @@ MonoBehaviour:
   _test: 0
   gettingColliider: {fileID: 372251399}
   attackCollider: {fileID: 1709412792}
-  parent: {fileID: 0}
+  mainParent: {fileID: 0}
 --- !u!54 &372251398
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -346,6 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
+  handObject: {fileID: 2017561497}
   currentWeapon: {fileID: 0}
   dashSpeed: 10
   dashTime: 0.25
@@ -507,7 +508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &584688281
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -618,6 +619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
+  handObject: {fileID: 0}
   currentWeapon: {fileID: 0}
   dashSpeed: 10
   dashTime: 0.25
@@ -1040,14 +1042,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659361425}
-  m_LocalRotation: {x: 0.037705455, y: 0.09962283, z: -0.71530855, w: 0.6906426}
-  m_LocalPosition: {x: 0.87, y: -0.04, z: -0.05}
+  m_LocalRotation: {x: -0.018266562, y: 0.70650935, z: 0.031490095, w: 0.7067668}
+  m_LocalPosition: {x: -0.029977806, y: 0.89980406, z: -0.0040046014}
   m_LocalScale: {x: 0.04896, y: 1.5198, z: 0.23315719}
   m_Children:
   - {fileID: 467233493}
   m_Father: {fileID: 2116519568}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 11.222, y: 4.893, z: -91.529}
+  m_LocalEulerAnglesHint: {x: -4.032, y: 89.941, z: 1.074}
 --- !u!65 &1659361427
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1242,12 +1244,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Squirrelclean (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54f14c2a2973f9f499b8fc84de4ea6d7, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 54f14c2a2973f9f499b8fc84de4ea6d7, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: d5fe497cd7f2ac24d96b16010ac4c2c2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54f14c2a2973f9f499b8fc84de4ea6d7, type: 3}
+--- !u!1 &2017561497 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2715566404302941441, guid: 54f14c2a2973f9f499b8fc84de4ea6d7, type: 3}
+  m_PrefabInstance: {fileID: 2017561496}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2050482097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,9 +1285,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050482097}
-  m_LocalRotation: {x: 0.037705455, y: 0.09962283, z: -0.71530855, w: 0.6906426}
-  m_LocalPosition: {x: 0.87, y: -0.04, z: -0.05}
-  m_LocalScale: {x: 0.04896, y: 1.5198, z: 0.23315719}
+  m_LocalRotation: {x: -0.014705736, y: 0.63858724, z: -0.007476343, w: -0.7693726}
+  m_LocalPosition: {x: -0.055480152, y: 0.8701268, z: 0.028272431}
+  m_LocalScale: {x: 0.04896, y: 1.5197996, z: 0.23315714}
   m_Children: []
   m_Father: {fileID: 372251396}
   m_RootOrder: 0
@@ -1393,7 +1404,7 @@ MonoBehaviour:
   _test: 2
   gettingColliider: {fileID: 2116519569}
   attackCollider: {fileID: 0}
-  parent: {fileID: 0}
+  mainParent: {fileID: 0}
 --- !u!4 &2116519568
 Transform:
   m_ObjectHideFlags: 0
@@ -1401,8 +1412,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2116519565}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.54, z: 3.01}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1659361426}
