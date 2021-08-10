@@ -14,14 +14,13 @@ public class WeaponManager : MonoBehaviour
 
     
     public GameObject hand;
-    public GameObject weapon;
+    public WeaponInfo weapon;
 
     
     private void Start() {
         weapon.transform.parent = hand.transform;
 
-        weapon.transform.localPosition = weapon.GetComponent<WeaponInfo>().weapon.pickPosition;
-        weapon.transform.localEulerAngles = weapon.GetComponent<WeaponInfo>().weapon.pickRotation;
+        weapon.OnGrab();
     }
     
     void DorpWeapon(){

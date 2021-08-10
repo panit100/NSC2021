@@ -9,4 +9,6 @@ public class WeaponScriptableObject : ScriptableObject
 
     public Vector3 pickPosition;
     public Vector3 pickRotation;
+    public Vector3 dropRotation;
+    
 }

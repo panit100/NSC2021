@@ -324,17 +324,23 @@ MonoBehaviour:
   weaponCollider:
   - {fileID: 1709412790}
   hand: {fileID: 2017561497}
-  weapon: {fileID: 463208800}
+  weapon: {fileID: 463208802}
 --- !u!4 &426189535 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 54f14c2a2973f9f499b8fc84de4ea6d7, type: 3}
   m_PrefabInstance: {fileID: 2017561496}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &463208800 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6704669990090535529, guid: f3fc7c1fa4225a140a9d2a4a93ca6c78, type: 3}
+--- !u!114 &463208802 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -1964284489439381067, guid: f3fc7c1fa4225a140a9d2a4a93ca6c78, type: 3}
   m_PrefabInstance: {fileID: 1831089730}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62569fec323465e46ba2bc9f52b1196c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &584688280
 GameObject:
   m_ObjectHideFlags: 0
