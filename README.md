@@ -1,2 +1,2 @@
 # NSC2021
- NSC in 2021 whit my friends
+ NSC in 2021 with my friends
