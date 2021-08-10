@@ -5,7 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Weapon", menuName = "ScriptableObjects")]
 public class WeaponScriptableObject : ScriptableObject
 {
-    public string prefabName;
+    public string WeaponName;
 
-    public GameObject weaponObject;
+    public Vector3 pickPosition;
+    public Vector3 pickRotation;
 }

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7dd8db6179ace54aac173a7eca3ee5e, type: 3}
-  m_Name: Sword
+  m_Name: Axe
   m_EditorClassIdentifier: 
-  WeaponName: Sword
+  WeaponName: Axe
   pickPosition: {x: 0, y: 0, z: 0}
-  pickRotation: {x: -180.731, y: -0.6450195, z: 84.886}
+  pickRotation: {x: 0, y: 0, z: -84.477}

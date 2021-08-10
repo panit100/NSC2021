@@ -4,54 +4,35 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
+    //Check which weapon player hold
     public enum test { style1,style2,style3};
     public test _test = test.style1;
 
+    //Contain all attack area of weapon
     [Header("Collider")]
-    [SerializeField]
-    Collider gettingColliider;
-    [SerializeField]
-    Collider attackCollider;
+    public GameObject[] weaponCollider;
 
-    Rigidbody rigidbody;
-    [SerializeField]
-    PlayerController_Cute mainParent;
+    
+    public GameObject hand;
+    public GameObject weapon;
 
     
     private void Start() {
-        if(GetComponentInParent<PlayerController_Cute>() != null){
-            mainParent = GetComponentInParent<PlayerController_Cute>();
-        }
+        weapon.transform.parent = hand.transform;
 
-        rigidbody = GetComponent<Rigidbody>();
+        weapon.transform.localPosition = weapon.GetComponent<WeaponInfo>().weapon.pickPosition;
+        weapon.transform.localEulerAngles = weapon.GetComponent<WeaponInfo>().weapon.pickRotation;
     }
-
-    
     
     void DorpWeapon(){
-            rigidbody.isKinematic = false;
-            //attackCollider.enabled = false;
-            gettingColliider.enabled = true;
-            gameObject.transform.parent = null;
-            mainParent = null; 
     }
 
-    void GetWeapon(GameObject parent){
-        rigidbody.isKinematic = true;
-        //attackCollider.enabled = true;
-        gettingColliider.enabled = false;
-        transform.localRotation = Quaternion.Euler(0,0,0);
-        transform.localPosition = new Vector3(0,0,0);
-        mainParent = parent.GetComponent<PlayerController_Cute>();
+    void GetWeapon(){
         
     }
 
     private void OnTriggerStay(Collider other) {
         if(other.tag == "Player" && Input.GetKeyDown(KeyCode.F)){
-            other.GetComponent<PlayerController_Cute>().currentWeapon.DorpWeapon();
-            gameObject.transform.parent = other.GetComponent<PlayerController_Cute>().handObject.transform;
-            GetWeapon(other.gameObject);
-            other.GetComponent<PlayerController_Cute>().currentWeapon = this;
             
         }
     }
