@@ -11,7 +11,9 @@ public class WeaponInfo : MonoBehaviour
         transform.localEulerAngles = weapon.pickRotation;
     }
 
-    public void OnDrop(){
-
+    public void OnDrop(GameObject Groundweapon){
+        transform.localPosition = new Vector3(Groundweapon.transform.position.x,weapon.dropYposition,Groundweapon.transform.localPosition.z);
+        
+        transform.localEulerAngles = weapon.dropRotation;
     }
 }

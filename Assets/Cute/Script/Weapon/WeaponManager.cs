@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    //Check which weapon player hold
-    public enum test { style1,style2,style3};
-    public test _test = test.style1;
+    //Weapon type
+    public enum WeaponType { Sword,Axe,Spear,Scythe,Box,CrossBow};
+    public WeaponType currentType = WeaponType.Sword;
 
     //Contain all attack area of weapon
     [Header("Collider")]
@@ -18,22 +18,32 @@ public class WeaponManager : MonoBehaviour
 
     
     private void Start() {
+        
+    }
+    
+    void GrabWeapon(){
         weapon.transform.parent = hand.transform;
 
         weapon.OnGrab();
+        weapon.GetComponent<Collider>().enabled = false;
+        //currentType = weapon.weapon.weaponType;
+    }
+
+    void DropWeapon(GameObject Groundweapon){
+        weapon.transform.parent = null;
+        weapon.OnDrop(Groundweapon);
+        weapon.GetComponent<Collider>().enabled = true;
     }
     
-    void DorpWeapon(){
-    }
-
-    void GetWeapon(){
-        
-    }
 
     private void OnTriggerStay(Collider other) {
-        if(other.tag == "Player" && Input.GetKeyDown(KeyCode.F)){
-            
+        if(other.tag == "Weapon" && Input.GetKeyDown(KeyCode.F)){
+            if(weapon != null){
+                DropWeapon(other.gameObject);
+            }
+
+            weapon = other.GetComponent<WeaponInfo>();
+            GrabWeapon();
         }
     }
-
 }

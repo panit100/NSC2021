@@ -15,3 +15,5 @@ MonoBehaviour:
   WeaponName: Sword
   pickPosition: {x: 0, y: 0, z: 0}
   pickRotation: {x: -180.731, y: -0.6450195, z: 84.886}
+  dropYposition: 0.59
+  dropRotation: {x: 90, y: 0, z: 57.651}
