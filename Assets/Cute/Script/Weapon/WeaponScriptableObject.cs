@@ -12,7 +12,6 @@ public class WeaponScriptableObject : ScriptableObject
     public float dropYposition;
     public Vector3 dropRotation;
 
-    public enum WeaponType { Sword,Axe,Spear,Scythe,Box,CrossBow};
-    public WeaponType weaponType = WeaponType.Sword;
+    public Weapon.WeaponType weaponType = Weapon.WeaponType.Sword;
     
 }

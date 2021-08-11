@@ -17,3 +17,4 @@ MonoBehaviour:
   pickRotation: {x: 0, y: 0, z: -84.477}
   dropYposition: 0.59
   dropRotation: {x: 90, y: 0, z: -50.366}
+  weaponType: 0

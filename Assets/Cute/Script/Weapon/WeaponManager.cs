@@ -1,16 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponManager : MonoBehaviour
-{
+public class Weapon{
     //Weapon type
     public enum WeaponType { Sword,Axe,Spear,Scythe,Box,CrossBow};
-    public WeaponType currentType = WeaponType.Sword;
+}
+
+[System.Serializable]
+public class WeaponCollider{
+    public Weapon.WeaponType weaponType;
+    public Collider collider;
+}
+
+public class WeaponManager : MonoBehaviour
+{
+    public Weapon.WeaponType currentType = Weapon.WeaponType.Sword;
+    
 
     //Contain all attack area of weapon
     [Header("Collider")]
-    public GameObject[] weaponCollider;
+    public WeaponCollider[] weaponCollider;
 
     
     public GameObject hand;
@@ -26,7 +37,7 @@ public class WeaponManager : MonoBehaviour
 
         weapon.OnGrab();
         weapon.GetComponent<Collider>().enabled = false;
-        //currentType = weapon.weapon.weaponType;
+        currentType = weapon.weapon.weaponType;
     }
 
     void DropWeapon(GameObject Groundweapon){
